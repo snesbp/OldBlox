@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rewards</title>
+    <title>Tickets</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,10 +12,13 @@
         <a href="community.html">Community</a>
         <a href="oldblox.html">OldBlox</a>
         <a href="game.html">2D Platformer</a>
-        <a href="rewards.html">Rewards</a>
+        <a href="rewards.html">Tickets</a>
     </nav>
-    <h1>Your Rewards</h1>
-    <p>You have <span id="tickets">0</span> tickets.</p>
-    <script src="script.js"></script>
+    <h1>Your Tickets</h1>
+    <p>You have <span id="ticketCount">0</span> tickets.</p>
+    <script>
+        // Load tickets from localStorage
+        document.getElementById("ticketCount").textContent = localStorage.getItem("tickets") || 0;
+    </script>
 </body>
 </html>
