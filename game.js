@@ -67,14 +67,20 @@ function update() {
         }
     });
 
-    // Check if player reaches goal
-    if (player.x + player.width > goal.x && player.y + player.height > goal.y) {
-        alert("You won! +10 Tickets!");
-        let tickets = localStorage.getItem("tickets") || 0;
-        localStorage.setItem("tickets", parseInt(tickets) + 10);
-        resetGame();
-    }
+// Check if player reaches goal
+if (player.x + player.width > goal.x && player.y + player.height > goal.y) {
+    alert("You won! +10 Tickets!");
+
+    // Get current tickets or set to 0
+    let tickets = localStorage.getItem("tickets") ? parseInt(localStorage.getItem("tickets")) : 0;
+    
+    // Add 10 tickets and save
+    tickets += 10;
+    localStorage.setItem("tickets", tickets);
+
+    resetGame();
 }
+
 
 // Reset game
 function resetGame() {
